@@ -20,7 +20,7 @@ public class ControllerBook {
     }
 
     @GetMapping("/book/{id}")
-    public ResponseEntity getAll(@PathVariable Long id) {
+    public ResponseEntity getOne(@PathVariable Long id) {
 //        log.debug("GET request to get a book with id : {}", id);
         System.out.println("Received GET request to get a book with id : " + id);
         Book book1 = serviceBook.getOne(id);

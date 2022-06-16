@@ -30,7 +30,7 @@ public class ControllerCourse {
     }
 
     @GetMapping("/course/{id}")
-    public ResponseEntity getAll(@PathVariable Long id) {
+    public ResponseEntity getOne(@PathVariable Long id) {
         Course course = serviceCourse.getOne(id);
         return ResponseEntity.ok(course);
     }
