@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  backend:
+    image: 'book-backend:latest'
+    build:
+      context: .
+    container_name: backend
+    ports:
+      - "8089:8089"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/book
+      - SPRING_DATASOURCE_USERNAME=book
+      - SPRING_DATASOURCE_PASSWORD=123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=book
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=book
+    ports:
+      - "5432:5432"
