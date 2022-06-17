@@ -19,7 +19,7 @@ public class ControllerLibrary {
         this.serviceLibrary = serviceLibrary;
     }
     @GetMapping("/library/{id}")
-    public ResponseEntity getAll(@PathVariable Long id) {
+    public ResponseEntity getOne(@PathVariable Long id) {
         Library library1 = serviceLibrary.getOne(id);
         return ResponseEntity.ok(library1);
     }

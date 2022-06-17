@@ -33,7 +33,7 @@ public class ControllerCategory {
     }
 
     @GetMapping("/category/{id}")
-    public ResponseEntity getAll(@PathVariable Long id) {
+    public ResponseEntity getOne(@PathVariable Long id) {
         Category category = serviceCategory.getOne(id);
         return ResponseEntity.ok(category);
     }
